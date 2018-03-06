@@ -144,6 +144,7 @@ INSTALLED_APPS = (
 LANGUAGES = (
     ## Customize this
     ('ar', gettext('ar')),
+    ('en', gettext('en')),
 )
 
 CMS_LANGUAGES = {
@@ -152,6 +153,13 @@ CMS_LANGUAGES = {
         {
             'code': 'ar',
             'name': gettext('ar'),
+            'redirect_on_fallback': True,
+            'public': True,
+            'hide_untranslated': False,
+        },
+        {
+            'code': 'en',
+            'name': gettext('English'),
             'redirect_on_fallback': True,
             'public': True,
             'hide_untranslated': False,
@@ -177,13 +185,12 @@ CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
     'default': {
-        'CONN_MAX_AGE': 0,
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
-        'NAME': 'project.db',
-        'PASSWORD': '',
-        'PORT': '',
-        'USER': ''
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sesha',
+        'USER': 'postgres',
+        'PASSWORD': '12345',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
