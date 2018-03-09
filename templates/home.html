@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load cms_tags sekizai_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% page_attribute "page_title" %}</title>
+    {% render_block "css" %}
+</head>
+<body style="color: red">
+    {% cms_toolbar %}
+    {% placeholder "content" %}
+    {% render_block "js" %}
+    <p>test template</p>
+</body>
+</html>
