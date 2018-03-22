@@ -54,17 +54,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+STATIC_ROOT = os.path.join(DATA_DIR, 'sesha_site', 'static')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'theproject', 'static'),
+    os.path.join(BASE_DIR, 'sesha_site', 'static'),
 )
 SITE_ID = 1
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'theproject', 'templates'), ],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -176,6 +176,8 @@ CMS_LANGUAGES = {
 
 CMS_TEMPLATES = (
     ## Customize this
+    ('index.html', 'sesha template'),
+    ('home.html', 'Home page template'),
     ('fullwidth.html', 'Fullwidth'),
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right')
